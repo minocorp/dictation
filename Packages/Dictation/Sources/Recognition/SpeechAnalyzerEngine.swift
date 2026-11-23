@@ -88,8 +88,8 @@ public actor SpeechAnalyzerEngine: SpeechEngine {
     }
 
     private func install() async throws(SpeechError) {
-        guard SpeechTranscriber.isAvailable else { throw .modelUnavailable }
         let locale = try await selectLocale(from: languages())
+        guard SpeechTranscriber.isAvailable else { throw .modelUnavailable }
         let transcriber = SpeechTranscriber(locale: locale, preset: .transcription)
         try await downloadAssetsIfNeeded(for: transcriber)
         try await reserve(locale)
