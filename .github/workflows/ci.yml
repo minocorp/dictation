@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_26.6.app
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/Library/Caches/org.swift.swiftpm
+            run/dd/SourcePackages
+          key: spm-${{ runner.os }}-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: spm-${{ runner.os }}-
+
+      - name: Install SwiftLint
+        run: brew install swiftlint
+
+      - name: Format
+        run: swift format lint --strict --recursive Packages App Eval
+
+      - name: Lint
+        run: swiftlint lint --strict
+
+      - name: Dependency rules
+        run: scripts/check-deps
+
+      - name: Test Dictation package
+        run: swift test --package-path Packages/Dictation
+
+      - name: Metal toolchain
+        run: xcodebuild -downloadComponent MetalToolchain
+
+      - name: Build app
+        run: |
+          xcodebuild build \
+            -project Dictation.xcodeproj \
+            -scheme Dictation \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            -derivedDataPath run/dd \
+            -skipMacroValidation \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO

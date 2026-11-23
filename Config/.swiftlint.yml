@@ -1,0 +1,143 @@
+strict: true
+included:
+  - App
+  - Packages
+  - Eval
+excluded:
+  - "**/.build"
+  - "**/Package.swift"
+  - run
+  - "**/Generated"
+
+disabled_rules:
+  - line_length
+  - trailing_comma
+  - opening_brace
+  - vertical_whitespace
+  - todo
+
+opt_in_rules:
+  - explicit_top_level_acl
+  - file_name
+  - one_declaration_per_file
+  - private_over_fileprivate
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - redundant_type_annotation
+  - empty_count
+  - first_where
+  - contains_over_filter_is_empty
+  - discouraged_optional_boolean
+  - fatal_error_message
+  - unavailable_function
+
+analyzer_rules:
+  - unused_declaration
+  - unused_import
+
+force_cast: error
+force_try: error
+force_unwrapping: error
+file_length:
+  warning: 300
+  error: 300
+type_body_length:
+  warning: 200
+  error: 200
+function_body_length:
+  warning: 40
+  error: 40
+function_parameter_count:
+  warning: 4
+  error: 4
+cyclomatic_complexity:
+  warning: 10
+  error: 10
+nesting:
+  type_level: 2
+  function_level: 2
+identifier_name:
+  min_length: 2
+  excluded: [id, x, y, i, ms]
+
+custom_rules:
+  no_doc_comments:
+    name: "No doc comments"
+    regex: '^\s*///'
+    message: "Remove the doc comment; let names and types carry the meaning."
+    severity: error
+  no_mark_banners:
+    name: "No MARK"
+    regex: '//\s*(MARK|-{3,}|={3,})'
+    message: "Split the type instead of adding section banners."
+    severity: error
+  no_commented_out_code:
+    name: "No commented-out code"
+    regex: '^\s*//\s*(let|var|func|if|guard|return|try|await|for|switch|case|import|struct|class|enum|actor)\b'
+    message: "Delete commented-out code."
+    severity: error
+  todo_needs_issue:
+    name: "TODO needs an issue"
+    regex: '//\s*(TODO|FIXME)(?!\(#\d+\))'
+    message: "Use // TODO(#123): ... with an issue number, or remove it."
+    severity: error
+  no_default_in_switch:
+    name: "No default case"
+    regex: '^\s*default:'
+    message: "List the cases; use @unknown default only for non-frozen system enums."
+    severity: error
+  no_banned_type_names:
+    name: "Banned type name"
+    regex: '\b(class|struct|enum|actor|protocol)\s+\w*(Manager|Helper|Util|Utils|Utility|Handler|Service|Impl)\b'
+    message: "Name the type for what it is."
+    severity: error
+  no_singleton:
+    name: "No singleton"
+    regex: 'static\s+(let|var)\s+shared\b'
+    message: "Inject through the initializer; only the composition root builds the graph."
+    severity: error
+  no_detached_task:
+    name: "No detached task"
+    regex: 'Task\.detached'
+    message: "Use structured concurrency or Task(priority:)."
+    severity: error
+  no_dispatch_main:
+    name: "No DispatchQueue.main"
+    regex: 'DispatchQueue\.main'
+    message: "Use @MainActor."
+    severity: error
+  no_task_sleep_nanoseconds:
+    name: "No Task.sleep(nanoseconds:)"
+    regex: 'Task\.sleep\(nanoseconds'
+    message: "Sleep on an injected Clock."
+    severity: error
+  no_unchecked_sendable:
+    name: "Unchecked Sendable"
+    regex: '@unchecked\s+Sendable'
+    message: "Allowed only for the ring buffer and tap context in code.md section 4."
+    severity: warning
+  no_combine_observableobject:
+    name: "No Combine or ObservableObject"
+    regex: 'import\s+Combine|ObservableObject|@Published|@StateObject|@ObservedObject|@EnvironmentObject'
+    message: "Use @Observable."
+    severity: error
+  no_print:
+    name: "No print"
+    regex: '\b(print|NSLog|debugPrint|dump)\('
+    message: "Use os.Logger."
+    severity: error
+  no_view_literals:
+    name: "No UI literals in views"
+    regex: '\b(Text|Button|Label|Toggle|Section|Menu|Picker|TextField)\("'
+    message: "Use a String Catalog key."
+    severity: error
+  no_empty_catch:
+    name: "No empty catch"
+    regex: 'catch\s*\{\s*\}'
+    message: "Map, recover, or log; never swallow."
+    severity: error
+  no_any_view:
+    name: "No AnyView"
+    regex: '\bAnyView\b'
+    message: "Use a concrete view or @ViewBuilder."
+    severity: error

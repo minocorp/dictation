@@ -1,0 +1,50 @@
+#!/bin/sh
+set -eu
+root="$(cd "$(dirname "$0")/.." && pwd)"
+sources="$root/Packages/Dictation/Sources"
+status=0
+
+allowed() {
+    case "$1" in
+        Core) echo "Foundation Synchronization os" ;;
+        Hotkeys) echo "Core Foundation ApplicationServices Synchronization os" ;;
+        Capture) echo "Core Foundation AVFoundation AudioToolbox CoreAudio Synchronization os" ;;
+        Recognition) echo "Core FluidAudio Speech AVFoundation CoreMedia Foundation Synchronization os" ;;
+        Cleanup) echo "Core FoundationModels Foundation RegexBuilder Synchronization os" ;;
+        Pasteboard) echo "Core AppKit ApplicationServices Carbon Foundation os" ;;
+        Context) echo "Core Pasteboard AppKit ApplicationServices Carbon Foundation os" ;;
+        Insertion) echo "Core Pasteboard AppKit ApplicationServices Carbon Foundation os" ;;
+        Learning) echo "Core ApplicationServices Foundation os" ;;
+        Permissions) echo "Core AppKit ApplicationServices AVFoundation Foundation Synchronization os" ;;
+        ModelCatalog) echo "Core CryptoKit Foundation Synchronization os" ;;
+        Store) echo "Core GRDB Foundation os" ;;
+        Diagnostics) echo "Core Foundation Synchronization os" ;;
+        Session) echo "Core Foundation Observation Synchronization os" ;;
+        UI) echo "Core Session SwiftUI AppKit CoreGraphics Foundation Observation os" ;;
+        CoreTesting) echo "Core Pasteboard Clocks Foundation Synchronization" ;;
+        *) return 1 ;;
+    esac
+}
+
+for dir in "$sources"/*/; do
+    target="$(basename "$dir")"
+    if ! list="$(allowed "$target")"; then
+        echo "$target has no import allowlist in scripts/check-deps"
+        status=1
+        continue
+    fi
+    permitted=" $list "
+    imports="$(grep -rhoE '^(@[A-Za-z]+ )?(public |internal |package |private )?import [A-Za-z]+' "$dir" 2>/dev/null | awk '{print $NF}' | sort -u)"
+    for module in $imports; do
+        case "$permitted" in
+            *" $module "*) ;;
+            *) echo "$target imports $module" ; status=1 ;;
+        esac
+    done
+    if [ "$target" != "ModelCatalog" ] && grep -rqE '\bURLSession\b' "$dir" 2>/dev/null; then
+        echo "$target references URLSession"
+        status=1
+    fi
+done
+
+exit "$status"
