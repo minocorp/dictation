@@ -1,0 +1,660 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "id": "qwen3-asr-0.6b-4bit",
+      "stage": "speech",
+      "display_name": "Qwen3-ASR 0.6B (4-bit)",
+      "family": "qwen3-asr",
+      "repo": "mlx-community/Qwen3-ASR-0.6B-4bit",
+      "revision": "313d850181767edf09f00a9c289becca70e58cd0",
+      "observed_revision": "313d850181767edf09f00a9c289becca70e58cd0",
+      "format": "mlx-safetensors",
+      "quant": "4bit",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "languages": [
+        "multilingual",
+        "ko",
+        "en"
+      ],
+      "min_ram_gb": 8,
+      "download_bytes": 712781279,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "README.md",
+          "bytes": 1008,
+          "sha256": "4d54132d09a2d3d12410ef13c94d7afcfc936bdca8239a3e6cd0797d6a28dd1c"
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 1161,
+          "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+        },
+        {
+          "path": "config.json",
+          "bytes": 7187,
+          "sha256": "923618cf5ca452fda0253a6be5c1a17f94a2e4851d3b98beb45848565587bd72"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 142,
+          "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 708236945,
+          "sha256": "70c7e67e588062adce4f10796e47ad42ead51c6671eda61a0987eae38ca95ddf"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 71814,
+          "sha256": "e3bb80ef0fd42a5be07b04e90c97d60460bbde8af3531e0bfe9100a61404d81a"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 330,
+          "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 12487,
+          "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      ],
+      "default_for": [],
+      "runtime": "mlx-audio-swift (MLXAudioSTT, Qwen3-ASR), spike 4",
+      "verified": [
+        "repo exists",
+        "license tag apache-2.0",
+        "model.safetensors 708236945 bytes",
+        "files, sizes and sha256 from the Hugging Face tree API at the pinned revision"
+      ],
+      "unverified": [
+        "Korean quality at 4-bit vs 8-bit",
+        "language list (Qwen3-ASR claims about 30 languages, Korean and English included)",
+        "total size with tokenizer files (about +4.5 MB)",
+        "mlx-audio-swift 4-bit loading (its README uses -bf16)"
+      ]
+    },
+    {
+      "id": "qwen3-asr-0.6b-8bit",
+      "stage": "speech",
+      "display_name": "Qwen3-ASR 0.6B (8-bit)",
+      "family": "qwen3-asr",
+      "repo": "mlx-community/Qwen3-ASR-0.6B-8bit",
+      "revision": "89e96d92ba34aca20b3e29fb10cc284097d1219f",
+      "observed_revision": "89e96d92ba34aca20b3e29fb10cc284097d1219f",
+      "format": "mlx-safetensors",
+      "quant": "8bit",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "languages": [
+        "multilingual",
+        "ko",
+        "en"
+      ],
+      "min_ram_gb": 8,
+      "download_bytes": 1010773761,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "README.md",
+          "bytes": 1008,
+          "sha256": "404c9125240861c9c8c23f2452e7140a9664d8393900b42bb0a411dc15abf79c"
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 1161,
+          "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+        },
+        {
+          "path": "config.json",
+          "bytes": 7187,
+          "sha256": "5d104a945fed08728ab010f12bf3ce5ab4d0794bba276d81bff5bd83ae9d2be0"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 142,
+          "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1006229426,
+          "sha256": "b5bfe4abc1b4c6e58b633096682ec2b6297298add1527119936107d211adf0e8"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 71815,
+          "sha256": "caa32ece76c395ba241533eb4aceb0efbc72488ef3d8d2fd3c677ce068dad57d"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 330,
+          "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 12487,
+          "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      ],
+      "default_for": [
+        "ram-16"
+      ],
+      "runtime": "mlx-audio-swift (MLXAudioSTT, Qwen3-ASR), spike 4",
+      "verified": [
+        "repo exists",
+        "license tag apache-2.0",
+        "usedStorage 1006229426 bytes",
+        "most downloaded variant (about 174k)",
+        "files, sizes and sha256 from the Hugging Face tree API at the pinned revision"
+      ],
+      "unverified": [
+        "same as 0.6b-4bit",
+        "mlx-audio-swift 8-bit loading (its README uses -bf16)"
+      ]
+    },
+    {
+      "id": "qwen3-asr-1.7b-4bit",
+      "stage": "speech",
+      "display_name": "Qwen3-ASR 1.7B (4-bit)",
+      "family": "qwen3-asr",
+      "repo": "mlx-community/Qwen3-ASR-1.7B-4bit",
+      "revision": "78a389c776a5483b2d0d4ea5494e11012e0d6159",
+      "observed_revision": "78a389c776a5483b2d0d4ea5494e11012e0d6159",
+      "format": "mlx-safetensors",
+      "quant": "4bit",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "languages": [
+        "multilingual",
+        "ko",
+        "en"
+      ],
+      "min_ram_gb": 16,
+      "download_bytes": 1607633106,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "README.md",
+          "bytes": 1008,
+          "sha256": "4d7f16d0a01cd626a3d5291b77249f135eeedd9b1b259d17716cc6b3ef7365cb"
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 1161,
+          "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+        },
+        {
+          "path": "config.json",
+          "bytes": 7188,
+          "sha256": "539c6c9d482349066e2e740241e39896f3bf4de0866c245f6539c85dbb19d93c"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 142,
+          "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1603081617,
+          "sha256": "9848eaf7a5c1589c671b35035ac27b72e248dd0c604eacae547e7e403d29db45"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 78968,
+          "sha256": "2612ab715223843b3dec0742737bc85f50914ca1484ade45955f99b4e012f2bb"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 330,
+          "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 12487,
+          "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      ],
+      "default_for": [],
+      "runtime": "mlx-audio-swift (MLXAudioSTT, Qwen3-ASR)",
+      "verified": [
+        "repo exists",
+        "license tag apache-2.0",
+        "model.safetensors 1603081617 bytes",
+        "files, sizes and sha256 from the Hugging Face tree API at the pinned revision"
+      ],
+      "unverified": [
+        "quality vs 8-bit",
+        "latency",
+        "mlx-audio-swift 4-bit loading (its README uses -bf16)"
+      ]
+    },
+    {
+      "id": "qwen3-asr-1.7b-8bit",
+      "stage": "speech",
+      "display_name": "Qwen3-ASR 1.7B (8-bit)",
+      "family": "qwen3-asr",
+      "repo": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "observed_revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "format": "mlx-safetensors",
+      "quant": "8bit",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "languages": [
+        "multilingual",
+        "ko",
+        "en"
+      ],
+      "min_ram_gb": 24,
+      "download_bytes": 2467859030,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "path": "README.md",
+          "bytes": 1008,
+          "sha256": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6"
+        },
+        {
+          "path": "chat_template.json",
+          "bytes": 1161,
+          "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+        },
+        {
+          "path": "config.json",
+          "bytes": 7188,
+          "sha256": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 142,
+          "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+        },
+        {
+          "path": "merges.txt",
+          "bytes": 1671853,
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 2463307541,
+          "sha256": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 78968,
+          "sha256": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 330,
+          "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 12487,
+          "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      ],
+      "default_for": [
+        "ram-24"
+      ],
+      "runtime": "mlx-audio-swift (MLXAudioSTT, Qwen3-ASR)",
+      "verified": [
+        "repo exists",
+        "license tag apache-2.0",
+        "model.safetensors 2463307541 bytes",
+        "files, sizes and sha256 from the Hugging Face tree API at the pinned revision"
+      ],
+      "unverified": [
+        "latency (inference.md estimate about 330 ms per 10 s)",
+        "mlx-audio-swift 8-bit loading (its README uses -bf16)"
+      ]
+    },
+    {
+      "id": "qwen3.5-0.8b-4bit",
+      "stage": "cleanup",
+      "display_name": "Qwen3.5 0.8B (4-bit)",
+      "family": "qwen3.5",
+      "repo": "mlx-community/Qwen3.5-0.8B-4bit",
+      "revision": "da28692b5f139cb0ec58a356b437486b7dac7462",
+      "observed_revision": "da28692b5f139cb0ec58a356b437486b7dac7462",
+      "format": "mlx-safetensors",
+      "quant": "4bit",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "languages": [
+        "multilingual",
+        "ko",
+        "en"
+      ],
+      "min_ram_gb": 8,
+      "download_bytes": 652029391,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        {
+          "path": "README.md",
+          "bytes": 678,
+          "sha256": "5614ff1cdf39fd970ade36d9499d99024c089e7add90931e018b8cd8de6dd265"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7755,
+          "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+        },
+        {
+          "path": "config.json",
+          "bytes": 3112,
+          "sha256": "ba7770da23eae5ebd6827571f086e331956b33f4442a9e876fb4aa10969a6772"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 625229487,
+          "sha256": "f5a0d9dd3efa73510542a8023d610ff26be2b4b020d181cfc4bedaa1fcc5dd9e"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 71473,
+          "sha256": "6e48f2fa5d6f033a6d77bf833abfa9698ca24d1715ecea4c67447bcfaee44650"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1300,
+          "sha256": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989343,
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1139,
+          "sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      ],
+      "default_for": [],
+      "runtime": "mlx-swift-lm (qwen3_5)",
+      "verified": [
+        "repo exists",
+        "license tag apache-2.0",
+        "sum of files 652029391 bytes",
+        "chat template supports enable_thinking",
+        "files, sizes and sha256 from the Hugging Face tree API at the pinned revision"
+      ],
+      "unverified": [
+        "cleanup quality (OpenWhispr #3314 saw regressions at 2B, expect worse at 0.8B; keep behind the guards)",
+        "Korean fluency",
+        "repo ships vision_tower weights; mlx-swift-lm registers qwen3_5 (LLMModelFactory) so text-only load is expected; vision keys dropped on load unverified"
+      ]
+    },
+    {
+      "id": "qwen3.5-2b-4bit",
+      "stage": "cleanup",
+      "display_name": "Qwen3.5 2B (4-bit)",
+      "family": "qwen3.5",
+      "repo": "mlx-community/Qwen3.5-2B-4bit",
+      "revision": "674aaa7240b91e8012fcad5d791b7dfe5ba90207",
+      "observed_revision": "674aaa7240b91e8012fcad5d791b7dfe5ba90207",
+      "format": "mlx-safetensors",
+      "quant": "4bit",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "languages": [
+        "multilingual",
+        "ko",
+        "en"
+      ],
+      "min_ram_gb": 16,
+      "download_bytes": 1749081927,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        {
+          "path": "README.md",
+          "bytes": 666,
+          "sha256": "25ccef130ebab05aed7798f4aee3b829a80e6c67c0f20b7d68dea8a4a103a071"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7755,
+          "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+        },
+        {
+          "path": "config.json",
+          "bytes": 3113,
+          "sha256": "beb7fc5a6e0405fe332821cf1a8ef7b69bb390a8c8933171647de5579debf949"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1722271785,
+          "sha256": "713fe7e5d3c3965f7106b0d0ee17615f7869c23c8d327996df8c1196fbcf07d5"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 81722,
+          "sha256": "8294c05cca7d53a6c33e3db2b379539bd296d054e0b689711b16b6ac93c7e49d"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1300,
+          "sha256": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989343,
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1139,
+          "sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      ],
+      "default_for": [],
+      "runtime": "mlx-swift-lm (qwen3_5)",
+      "verified": [
+        "repo exists",
+        "license tag apache-2.0",
+        "sum of files 1749081927 bytes",
+        "2213241664 parameters",
+        "chat template inserts empty think block without enable_thinking",
+        "files, sizes and sha256 from the Hugging Face tree API at the pinned revision"
+      ],
+      "unverified": [
+        "latency on M1 16 GB (spike 1)",
+        "prefix cache on hybrid arch (spike 2)",
+        "repo ships vision_tower weights; mlx-swift-lm registers qwen3_5 (LLMModelFactory) so text-only load is expected; vision keys dropped on load unverified"
+      ]
+    },
+    {
+      "id": "qwen3.5-4b-4bit",
+      "stage": "cleanup",
+      "display_name": "Qwen3.5 4B (4-bit)",
+      "family": "qwen3.5",
+      "repo": "mlx-community/Qwen3.5-4B-MLX-4bit",
+      "revision": "32f3e8ecf65426fc3306969496342d504bfa13f3",
+      "observed_revision": "32f3e8ecf65426fc3306969496342d504bfa13f3",
+      "format": "mlx-safetensors",
+      "quant": "4bit",
+      "license": "Apache-2.0",
+      "license_verified": true,
+      "languages": [
+        "multilingual",
+        "ko",
+        "en"
+      ],
+      "min_ram_gb": 24,
+      "download_bytes": 3061132920,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        {
+          "path": "README.md",
+          "bytes": 2273,
+          "sha256": "49c0a725bdd22705d2d34b93cfe20463b673e3339ce4de8b81a340c05cfef5bc"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        {
+          "path": "config.json",
+          "bytes": 3366,
+          "sha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3034300695,
+          "sha256": "5fb9acd0246866381cf8c5c354c6db1019f6498eec4ccb4f5edcc71ffeacb2db"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 101944,
+          "sha256": "52e534c41f7b97708329c85f762e5882bf48bd5955a422c6ae74eba321e6048a"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 1300,
+          "sha256": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 19989343,
+          "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 1139,
+          "sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182"
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        {
+          "path": "vocab.json",
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      ],
+      "default_for": [
+        "ram-16",
+        "ram-24"
+      ],
+      "runtime": "mlx-swift-lm (qwen3_5)",
+      "verified": [
+        "repo exists",
+        "license tag apache-2.0",
+        "base_model Qwen/Qwen3.5-4B",
+        "sum of tree file sizes 3061132920 bytes",
+        "files, sizes and sha256 from the Hugging Face tree API at the pinned revision"
+      ],
+      "unverified": [
+        "latency (inference.md: about 83 tok/s on M4 Pro)",
+        "repo ships vision_tower weights; mlx-swift-lm registers qwen3_5 (LLMModelFactory) so text-only load is expected; vision keys dropped on load unverified"
+      ]
+    }
+  ]
+}
