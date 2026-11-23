@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10F88D9426F7254128024C85 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F99A3E96A6166FF8C8CC4A02 /* Sparkle */; };
+		26EDF4741BF82D31F800E7FD /* Dictation in Frameworks */ = {isa = PBXBuildFile; productRef = 1B56612A4B2913DCB7258FD3 /* Dictation */; };
+		275E6EAE9559C0BF1423582A /* EnginesMLX in Frameworks */ = {isa = PBXBuildFile; productRef = DC1F222726445EA7C6FA180E /* EnginesMLX */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A494D122B76F09F2DCF32CE /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		19EB5C80DE87E34D55E66DF1 /* Dictation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dictation; path = Packages/Dictation; sourceTree = SOURCE_ROOT; };
+		B784014B02E61703E4481279 /* EnginesMLX */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EnginesMLX; path = Packages/EnginesMLX; sourceTree = SOURCE_ROOT; };
+		E65E5A842A5A11C6E28F0022 /* Dictation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E38B4187181EA14935ADA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AA7AF2DE348E065164BFE4C3 /* App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05D3B0358094EB34E25A5EBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26EDF4741BF82D31F800E7FD /* Dictation in Frameworks */,
+				275E6EAE9559C0BF1423582A /* EnginesMLX in Frameworks */,
+				10F88D9426F7254128024C85 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E1147E67758A0439019A2B1 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				19EB5C80DE87E34D55E66DF1 /* Dictation */,
+				B784014B02E61703E4481279 /* EnginesMLX */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		49713E01E61AA2457A7F7911 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E65E5A842A5A11C6E28F0022 /* Dictation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81AB10C117B97DA8686A96B2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E8E38B4187181EA14935ADA0 /* Debug.xcconfig */,
+				0A494D122B76F09F2DCF32CE /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		CADCB6BFC794123084A486BE = {
+			isa = PBXGroup;
+			children = (
+				AA7AF2DE348E065164BFE4C3 /* App */,
+				81AB10C117B97DA8686A96B2 /* Config */,
+				3E1147E67758A0439019A2B1 /* Packages */,
+				49713E01E61AA2457A7F7911 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B0E20CB8D2F837A6FD258D5 /* Dictation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DD4A41A739D463018215769 /* Build configuration list for PBXNativeTarget "Dictation" */;
+			buildPhases = (
+				77B3FC316B56D14741C2850D /* Sources */,
+				17EEEE321C50A036C49CEF08 /* Resources */,
+				05D3B0358094EB34E25A5EBB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AA7AF2DE348E065164BFE4C3 /* App */,
+			);
+			name = Dictation;
+			packageProductDependencies = (
+				1B56612A4B2913DCB7258FD3 /* Dictation */,
+				DC1F222726445EA7C6FA180E /* EnginesMLX */,
+				F99A3E96A6166FF8C8CC4A02 /* Sparkle */,
+			);
+			productName = Dictation;
+			productReference = E65E5A842A5A11C6E28F0022 /* Dictation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97C4CDAC27EC5753797C7366 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1B0E20CB8D2F837A6FD258D5 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 9C56EC6DACAC21736E7A3A28 /* Build configuration list for PBXProject "Dictation" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CADCB6BFC794123084A486BE;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				77D1667326040711FBD08E68 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				CC1C1CC5E585796E57DD9492 /* XCLocalSwiftPackageReference "Packages/Dictation" */,
+				8750E129DFD5EC2844AEDFC3 /* XCLocalSwiftPackageReference "Packages/EnginesMLX" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 49713E01E61AA2457A7F7911 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B0E20CB8D2F837A6FD258D5 /* Dictation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17EEEE321C50A036C49CEF08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77B3FC316B56D14741C2850D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0003FC6D91EE27AE7D2E46C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E38B4187181EA14935ADA0 /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+			};
+			name = Debug;
+		};
+		685D73C0589D75F581257E60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A494D122B76F09F2DCF32CE /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+			};
+			name = Release;
+		};
+		8642C2161022941B9C1670BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			};
+			name = Debug;
+		};
+		BE85BBE425DB13C8FCC34F10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DD4A41A739D463018215769 /* Build configuration list for PBXNativeTarget "Dictation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8642C2161022941B9C1670BC /* Debug */,
+				BE85BBE425DB13C8FCC34F10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9C56EC6DACAC21736E7A3A28 /* Build configuration list for PBXProject "Dictation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0003FC6D91EE27AE7D2E46C2 /* Debug */,
+				685D73C0589D75F581257E60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		8750E129DFD5EC2844AEDFC3 /* XCLocalSwiftPackageReference "Packages/EnginesMLX" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/EnginesMLX;
+		};
+		CC1C1CC5E585796E57DD9492 /* XCLocalSwiftPackageReference "Packages/Dictation" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Dictation;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		77D1667326040711FBD08E68 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B56612A4B2913DCB7258FD3 /* Dictation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dictation;
+		};
+		DC1F222726445EA7C6FA180E /* EnginesMLX */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EnginesMLX;
+		};
+		F99A3E96A6166FF8C8CC4A02 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77D1667326040711FBD08E68 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 97C4CDAC27EC5753797C7366 /* Project object */;
+}

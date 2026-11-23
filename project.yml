@@ -1,0 +1,43 @@
+name: Dictation
+options:
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+configs:
+  Debug: debug
+  Release: release
+configFiles:
+  Debug: Config/Debug.xcconfig
+  Release: Config/Release.xcconfig
+packages:
+  Dictation:
+    path: Packages/Dictation
+  EnginesMLX:
+    path: Packages/EnginesMLX
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    from: 2.8.0
+targets:
+  Dictation:
+    type: application
+    platform: macOS
+    sources:
+      - path: App
+        type: syncedFolder
+    dependencies:
+      - package: Dictation
+        product: Dictation
+      - package: EnginesMLX
+        product: EnginesMLX
+      - package: Sparkle
+        product: Sparkle
+schemes:
+  Dictation:
+    build:
+      targets:
+        Dictation: all
+    run:
+      config: Debug
+    archive:
+      config: Release

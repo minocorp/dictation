@@ -1,0 +1,25 @@
+#!/bin/sh
+set -eu
+root="$(cd "$(dirname "$0")/.." && pwd)"
+derived="$root/run/dd-release"
+built="$derived/Build/Products/Release/Dictation.app"
+installed="$HOME/Applications/Dictation.app"
+
+xcodebuild build \
+    -project "$root/Dictation.xcodeproj" \
+    -scheme Dictation \
+    -configuration Release \
+    -destination 'platform=macOS' \
+    -derivedDataPath "$derived" \
+    -allowProvisioningUpdates \
+    -skipMacroValidation \
+    -skipPackagePluginValidation \
+    -quiet
+
+osascript -e 'tell application id "com.minodevss.dictation" to quit' >/dev/null 2>&1 || true
+while pgrep -f "$installed/Contents/MacOS/Dictation" >/dev/null; do sleep 0.2; done
+
+mkdir -p "$HOME/Applications"
+rm -rf "$installed"
+ditto "$built" "$installed"
+open "$installed"
