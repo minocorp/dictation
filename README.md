@@ -6,7 +6,7 @@ Hold-to-talk dictation for macOS that transcribes and cleans up speech on the de
 
 - Apple Silicon Mac
 - macOS 26 or later
-- Xcode 26.6 or later with the Metal toolchain (`xcodebuild -downloadComponent MetalToolchain`)
+- Xcode 27 or later with the Metal toolchain (`xcodebuild -downloadComponent MetalToolchain`)
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) only when `project.yml` changes (`xcodegen generate`)
 - [SwiftLint](https://github.com/realm/SwiftLint) for the checks
 
