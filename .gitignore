@@ -1,0 +1,11 @@
+run/
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+.DS_Store
+Config/Local.xcconfig
+*.profraw
+notes/
+AGENTS.md

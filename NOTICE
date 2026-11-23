@@ -1,0 +1,57 @@
+Dictation
+Copyright 2026 minodevss
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+This product includes third-party software and models. Their licenses follow.
+
+Apache License 2.0 (full text in LICENSE)
+
+- FluidAudio (FluidInference)
+- swift-huggingface (Copyright 2025 Hugging Face SAS)
+- swift-transformers (Hugging Face SAS)
+- swift-jinja (Copyright 2022 Hugging Face SAS)
+- swift-collections, swift-numerics, swift-crypto, swift-asn1, swift-syntax (Apple Inc. and the Swift project authors)
+- metal-cpp, bundled in mlx-swift (Apple Inc.)
+
+MIT License (text below)
+
+- GRDB.swift: Copyright (C) 2015-2025 Gwendal Roue
+- swift-clocks: Copyright (c) 2022 Point-Free
+- swift-concurrency-extras: Copyright (c) 2023 Point-Free
+- swift-issue-reporting: Copyright (c) 2021 Point-Free, Inc.
+- mlx-swift: Copyright (c) 2023 ml-explore, including the bundled mlx, fmt and json sources
+- mlx-swift-lm: Copyright (c) 2024 ml-explore
+- mlx-audio-swift: Copyright (c) 2025 Prince Canuma
+- EventSource: Copyright 2025 Mattt (https://mat.tt)
+- yyjson: Copyright (c) 2020 YaoYuan
+- Sparkle: Copyright (c) 2006-2013 Andy Matuschak, (c) 2009-2013 Elgato Systems GmbH, (c) 2011-2014 Kornel Lesinski, (c) 2015-2017 Mayur Pawashe, (c) 2014 C.W. Betts, (c) 2014 Petroules Corporation, (c) 2014 Big Nerd Ranch, and the components listed in its LICENSE file (https://github.com/sparkle-project/Sparkle/blob/2.x/LICENSE)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+BSD License
+
+- zstd: Copyright (c) Meta Platforms, Inc. and affiliates. Used under its BSD license (https://github.com/facebook/zstd/blob/dev/LICENSE).
+
+Models (downloaded at runtime, not part of this repository)
+
+- Silero VAD (Silero Team), MIT, as the Core ML conversion loaded by FluidAudio
+- Qwen3-ASR (Alibaba Cloud Qwen team), Apache-2.0
+- Qwen3.5 (Alibaba Cloud Qwen team), Apache-2.0
+
+The license of each model is recorded in Models/manifest.json.
