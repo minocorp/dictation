@@ -29,10 +29,10 @@ jobs:
           restore-keys: spm-${{ runner.os }}-
 
       - name: Install SwiftLint
-        run: brew install swiftlint
+        run: brew install swiftlint swift-format
 
       - name: Format
-        run: swift format lint --strict --recursive Packages App Eval
+        run: swift-format lint --strict --recursive Packages App Eval
 
       - name: Lint
         run: swiftlint lint --strict
