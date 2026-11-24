@@ -9,8 +9,7 @@ internal struct AddToDictionarySheet: View {
     private var draft = WordDraft()
 
     private var words: [String] {
-        let text = item.finalText.isEmpty ? item.rawText : item.finalText
-        return text.split(whereSeparator: \.isWhitespace).map { String($0) }
+        item.displayText.split(whereSeparator: \.isWhitespace).map { String($0) }
     }
 
     var body: some View {

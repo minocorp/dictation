@@ -74,8 +74,7 @@ extension AppRoot {
 
     private static func copyLastResult(_ runner: SessionRunner) {
         guard let item = runner.state.lastResult?.item else { return }
-        let text = item.finalText.isEmpty ? item.rawText : item.finalText
         NSPasteboard.general.clearContents()
-        NSPasteboard.general.setString(text, forType: .string)
+        NSPasteboard.general.setString(item.displayText, forType: .string)
     }
 }

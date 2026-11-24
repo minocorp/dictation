@@ -59,7 +59,7 @@ public final class HistoryModel {
     }
 
     func copy(_ item: HistoryItem) {
-        actions.copy(item.finalText.isEmpty ? item.rawText : item.finalText)
+        actions.copy(item.displayText)
     }
 
     func canRetry(_ item: HistoryItem) -> Bool {

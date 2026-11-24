@@ -78,8 +78,7 @@ internal final class StatusItemController: NSObject, NSMenuDelegate {
     }
 
     private var lastResultText: String? {
-        guard let last = runner.state.lastResult?.item else { return nil }
-        return last.finalText.isEmpty ? last.rawText : last.finalText
+        runner.state.lastResult?.item.displayText
     }
 
     private func makeItem(for entry: MenuEntry) -> NSMenuItem {
