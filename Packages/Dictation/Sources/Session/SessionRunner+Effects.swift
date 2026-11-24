@@ -31,7 +31,6 @@ extension SessionRunner {
     }
 
     private func play(_ sound: Sound) {
-        guard environment.preferences().sounds else { return }
         outputs.sounds.play(sound)
         TimingLog.mark("sound", "kind=\(sound)", for: liveCapture ?? state.active?.pending.id)
     }

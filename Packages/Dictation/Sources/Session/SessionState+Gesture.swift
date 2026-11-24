@@ -86,7 +86,7 @@ extension SessionState {
         active = nil
         live.pending.wasTap = live.mode == .hold && !live.hasPassedTapThreshold
         queue.append(live.pending)
-        return timerCancellations(for: live) + [.stopCapture(live.pending.id), .play(.finish)]
+        return timerCancellations(for: live) + [.stopCapture(live.pending.id)] + sound(.finish)
     }
 
     private mutating func cancelLive() -> [Effect] {
@@ -98,7 +98,7 @@ extension SessionState {
         pending.delivery = .canceled
         queue.append(pending)
         let effects = timerCancellations(for: live) + [.cancelWork(id)]
-        return effects + [.stopCapture(id), .play(.cancel)] + post(.canceled)
+        return effects + [.stopCapture(id)] + sound(.cancel) + post(.canceled)
     }
 
     private mutating func abandonLive() -> [Effect] {

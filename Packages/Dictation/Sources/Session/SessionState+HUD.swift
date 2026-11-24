@@ -11,6 +11,10 @@ extension SessionState {
         hud = derivedHUD
     }
 
+    func sound(_ sound: Sound) -> [Effect] {
+        preferences.sounds ? [.play(sound)] : []
+    }
+
     mutating func post(_ notice: HUDState) -> [Effect] {
         guard notice != .hidden else { return [] }
         self.notice = notice
