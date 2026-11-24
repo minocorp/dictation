@@ -9,7 +9,6 @@ internal struct ChatTurnsTests {
         dictionary: [Word(text: "Supabase", soundsLike: ["super base"], source: .manual)],
         contextBefore: "앞 문장.",
         languages: [],
-        timeBudget: .milliseconds(300),
     )
 
     @Test

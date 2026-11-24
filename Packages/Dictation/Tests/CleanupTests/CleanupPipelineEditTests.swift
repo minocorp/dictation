@@ -30,7 +30,6 @@ internal struct CleanupPipelineEditTests {
                 EditRequest(
                     selection: "Hello there.",
                     instruction: "shorter",
-                    timeBudget: .seconds(5),
                 )
             ]
         )

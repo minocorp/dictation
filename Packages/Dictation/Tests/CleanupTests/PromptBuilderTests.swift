@@ -22,7 +22,6 @@ internal struct PromptBuilderTests {
             dictionary: dictionary,
             contextBefore: contextBefore,
             languages: [],
-            timeBudget: .milliseconds(300),
         )
     }
 
@@ -157,7 +156,7 @@ internal struct PromptBuilderTests {
     @Test
     func editPromptUsesSelectionAndInstruction() {
         let prompt = builder.editPrompt(
-            for: EditRequest(selection: "one two", instruction: "shorter", timeBudget: .seconds(5))
+            for: EditRequest(selection: "one two", instruction: "shorter")
         )
         #expect(prompt.assistantPrefill == "<edited>")
         #expect(prompt.temperature == 0.2)

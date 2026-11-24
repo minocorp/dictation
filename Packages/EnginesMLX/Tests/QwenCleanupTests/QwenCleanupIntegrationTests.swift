@@ -13,7 +13,6 @@ internal struct QwenCleanupIntegrationTests {
             dictionary: [],
             contextBefore: "",
             languages: [Locale(identifier: "ko")],
-            timeBudget: .seconds(5),
         )
     }
 
@@ -45,7 +44,6 @@ internal struct QwenCleanupIntegrationTests {
             EditRequest(
                 selection: "the meeting is on tuesday",
                 instruction: "make it formal",
-                timeBudget: .seconds(5),
             )
         )
         #expect(!edited.isEmpty)

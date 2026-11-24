@@ -80,7 +80,6 @@ public struct CleanupPipeline<TimeClock: Clock<Duration>>: Sendable {
                 dictionary: context.dictionary,
                 contextBefore: ([context.contextBefore] + cleaned).joined(separator: " "),
                 languages: languages,
-                timeBudget: remaining,
             )
             switch try await attempt(
                 budget: remaining,
