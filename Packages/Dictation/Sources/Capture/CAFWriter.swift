@@ -26,7 +26,7 @@ internal final class CAFWriter {
     func append(_ samples: [Float]) throws(CaptureError) {
         guard !samples.isEmpty else { return }
         do {
-            try handle.write(contentsOf: samples.withUnsafeBytes { Data($0) })
+            try samples.withUnsafeBytes { try handle.write(contentsOf: $0) }
         } catch {
             throw .diskWriteFailed(code: (error as NSError).code)
         }
@@ -34,13 +34,20 @@ internal final class CAFWriter {
     }
 
     func finish() throws(CaptureError) {
+        let sealed = Result { try seal() }
+        let closed = Result { try handle.close() }
         do {
-            try handle.seek(toOffset: UInt64(CAFFormat.dataSizeOffset))
-            let size = CAFFormat.dataChunkSize(sampleCount: sampleCount)
-            try handle.write(contentsOf: withUnsafeBytes(of: size.bigEndian) { Data($0) })
-            try handle.close()
+            try sealed.get()
+            try closed.get()
         } catch {
             throw .diskWriteFailed(code: (error as NSError).code)
         }
+    }
+
+    private func seal() throws {
+        try handle.seek(toOffset: UInt64(CAFFormat.dataSizeOffset))
+        let size = CAFFormat.dataChunkSize(sampleCount: sampleCount)
+        try withUnsafeBytes(of: size.bigEndian) { try handle.write(contentsOf: $0) }
+        try handle.synchronize()
     }
 }
