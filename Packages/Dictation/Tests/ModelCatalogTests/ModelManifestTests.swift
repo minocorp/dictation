@@ -81,6 +81,11 @@ internal struct ModelManifestTests {
             issue: .builtInFormat(id: "test-model"),
         ),
         InvalidCase(
+            name: "default for a tier below its minimum RAM",
+            entry: ManifestFixtures.entry(minRAMGB: 24, defaultFor: [.ram16]),
+            issue: .defaultBelowMinimumRAM(id: "test-model"),
+        ),
+        InvalidCase(
             name: "malformed repo",
             entry: ManifestFixtures.entry(repo: "no-owner"),
             issue: .invalidRepo(id: "test-model"),

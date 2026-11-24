@@ -1,4 +1,5 @@
 public enum RAMTier: String, Codable, Hashable, Sendable {
+    private static let smallTierGB = 8
     private static let mediumTierGB = 16
     private static let largeTierGB = 24
 
@@ -13,6 +14,14 @@ public enum RAMTier: String, Codable, Hashable, Sendable {
             self = .ram16
         } else {
             self = .ram24
+        }
+    }
+
+    public var floorGB: Int {
+        switch self {
+        case .ram8: Self.smallTierGB
+        case .ram16: Self.mediumTierGB
+        case .ram24: Self.largeTierGB
         }
     }
 }
