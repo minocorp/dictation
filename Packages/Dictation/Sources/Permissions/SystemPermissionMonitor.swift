@@ -110,11 +110,7 @@ public final class SystemPermissionMonitor: PermissionMonitor {
                     isAccessibilityTrusted: system.isAccessibilityTrusted(),
                 )
             )
-            do {
-                try await clock.sleep(for: currentInterval)
-            } catch {
-                return
-            }
+            guard await clock.sleepUnlessCancelled(for: currentInterval) else { return }
         }
     }
 }

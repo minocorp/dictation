@@ -59,12 +59,8 @@ public struct CorrectionLearner: Sendable {
         }
         let clock = clock
         let timer = Task {
-            do {
-                try await clock.sleep(for: Self.watchLimit)
-                continuation.yield(.timedOut)
-            } catch {
-                return
-            }
+            guard await clock.sleepUnlessCancelled(for: Self.watchLimit) else { return }
+            continuation.yield(.timedOut)
         }
         var latest = baseline
         for await event in merged {

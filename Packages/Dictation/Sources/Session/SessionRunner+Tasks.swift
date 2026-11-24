@@ -42,11 +42,7 @@ extension SessionRunner {
         let generation = nextTimerGeneration
         let clock = environment.clock
         let task = Task { [weak self] in
-            do {
-                try await clock.sleep(for: duration)
-            } catch {
-                return
-            }
+            guard await clock.sleepUnlessCancelled(for: duration) else { return }
             guard !Task.isCancelled else { return }
             self?.timerFired(timer, generation: generation)
         }

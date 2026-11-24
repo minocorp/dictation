@@ -15,12 +15,8 @@ extension CleanupPipeline {
                 }
             }
             group.addTask {
-                do {
-                    try await clock.sleep(for: budget)
-                    return .timedOut
-                } catch {
-                    return nil
-                }
+                guard await clock.sleepUnlessCancelled(for: budget) else { return nil }
+                return .timedOut
             }
             var first: EngineAttempt = .failed(.cancelled)
             for await outcome in group {

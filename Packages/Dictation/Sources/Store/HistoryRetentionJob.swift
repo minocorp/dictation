@@ -38,11 +38,7 @@ public actor HistoryRetentionJob {
         schedule = Task { [weak self] in
             while !Task.isCancelled {
                 await self?.runLoggingFailure()
-                do {
-                    try await clock.sleep(for: Self.interval)
-                } catch {
-                    return
-                }
+                guard await clock.sleepUnlessCancelled(for: Self.interval) else { return }
             }
         }
     }
