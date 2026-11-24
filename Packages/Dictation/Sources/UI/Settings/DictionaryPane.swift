@@ -6,6 +6,8 @@ internal struct DictionaryPane: View {
     var settings: SettingsModel
     @Bindable
     var model: DictionaryModel
+    @State
+    private var draft = WordDraft()
 
     var body: some View {
         Form {
@@ -15,18 +17,20 @@ internal struct DictionaryPane: View {
             Section {
                 TextField(
                     UIString.dictionaryWord,
-                    text: $model.newWord,
+                    text: $draft.text,
                     prompt: Text(UIString.dictionaryWordExample),
                 )
                 TextField(
                     UIString.dictionarySoundsLike,
-                    text: $model.newSoundsLike,
+                    text: $draft.soundsLike,
                     prompt: Text(UIString.dictionarySoundsLikeExample),
                 )
                 Button(UIString.dictionaryAdd) {
-                    Task { await model.addTypedWord() }
+                    guard let word = draft.word else { return }
+                    draft = WordDraft()
+                    Task { await model.add(word) }
                 }
-                .disabled(!model.canAdd)
+                .disabled(draft.word == nil)
             }
             Section {
                 ForEach(model.words, id: \.text) { word in

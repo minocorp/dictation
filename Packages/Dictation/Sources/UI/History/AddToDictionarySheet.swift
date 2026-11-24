@@ -2,10 +2,11 @@ import Core
 import SwiftUI
 
 internal struct AddToDictionarySheet: View {
-    @Bindable
-    var model: DictionaryModel
+    let model: DictionaryModel
     let item: HistoryItem
     let close: () -> Void
+    @State
+    private var draft = WordDraft()
 
     private var words: [String] {
         let text = item.finalText.isEmpty ? item.rawText : item.finalText
@@ -19,7 +20,7 @@ internal struct AddToDictionarySheet: View {
             FlowLayout(spacing: 6) {
                 ForEach(Array(words.enumerated()), id: \.offset) { _, word in
                     Button {
-                        model.newWord = word.trimmingCharacters(in: .punctuationCharacters)
+                        draft.text = word.trimmingCharacters(in: .punctuationCharacters)
                     } label: {
                         Text(verbatim: word)
                     }
@@ -27,20 +28,21 @@ internal struct AddToDictionarySheet: View {
                     .controlSize(.small)
                 }
             }
-            TextField(UIString.dictionaryWord, text: $model.newWord)
-            TextField(UIString.dictionarySoundsLike, text: $model.newSoundsLike)
+            TextField(UIString.dictionaryWord, text: $draft.text)
+            TextField(UIString.dictionarySoundsLike, text: $draft.soundsLike)
             HStack {
                 Spacer()
                 Button(UIString.historyDictionaryCancel, action: close)
                     .keyboardShortcut(.cancelAction)
                 Button(UIString.historyDictionaryAdd) {
+                    guard let word = draft.word else { return }
                     Task {
-                        await model.addTypedWord()
+                        await model.add(word)
                         close()
                     }
                 }
                 .keyboardShortcut(.defaultAction)
-                .disabled(!model.canAdd)
+                .disabled(draft.word == nil)
             }
         }
         .padding(20)

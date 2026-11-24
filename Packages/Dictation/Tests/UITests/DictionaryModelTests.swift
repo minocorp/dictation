@@ -8,27 +8,30 @@ internal struct DictionaryModelTests {
     private let store = FakeWordStore()
 
     @Test
-    func typedWordIsAddedWithSplitSoundAlikes() async {
-        let model = DictionaryModel(store: store)
-        model.newWord = " Supabase "
-        model.newSoundsLike = "super base, soup a base,"
-        await model.addTypedWord()
+    func draftTrimsTheWordAndSplitsSoundAlikes() {
+        let draft = WordDraft(text: " Supabase ", soundsLike: "super base, soup a base,")
         #expect(
-            store.words == [
-                Word(text: "Supabase", soundsLike: ["super base", "soup a base"], source: .manual)
-            ]
+            draft.word
+                == Word(
+                    text: "Supabase",
+                    soundsLike: ["super base", "soup a base"],
+                    source: .manual,
+                )
         )
-        #expect(model.newWord.isEmpty)
-        #expect(model.words.count == 1)
     }
 
     @Test
-    func blankWordIsNotAddable() async {
+    func blankDraftHasNoWord() {
+        #expect(WordDraft(text: "   ", soundsLike: "x").word == nil)
+    }
+
+    @Test
+    func addStoresTheWordAndReloads() async {
+        let word = Word(text: "Supabase", soundsLike: [], source: .manual)
         let model = DictionaryModel(store: store)
-        model.newWord = "   "
-        #expect(!model.canAdd)
-        await model.addTypedWord()
-        #expect(store.words.isEmpty)
+        await model.add(word)
+        #expect(store.words == [word])
+        #expect(model.words == [word])
     }
 
     @Test
