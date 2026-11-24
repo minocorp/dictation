@@ -25,7 +25,8 @@ public actor HistoryRetentionJob {
 
     public func runOnce() async throws(StoreError) {
         let current = now()
-        let days = retention().days
+        // Retention off removes finished items on save; the rest keep the audio window for Restore.
+        let days = max(retention().days, 1)
         try await store.purge(
             olderThan: current.addingTimeInterval(-Double(days) * Self.secondsPerDay)
         )

@@ -14,15 +14,11 @@ public final class GRDBHistoryStore: HistoryStore {
     }
 
     public func save(_ item: HistoryItem) async throws(StoreError) {
-        let record = storedRecord(for: item)
-        try await database.write { db in try record.save(db) }
-        try await finishWrite(of: item)
+        try await write(item) { db, record in try record.save(db) }
     }
 
     public func update(_ item: HistoryItem) async throws(StoreError) {
-        let record = storedRecord(for: item)
-        try await database.write { db in try record.update(db) }
-        try await finishWrite(of: item)
+        try await write(item) { db, record in try record.update(db) }
     }
 
     public func item(id: DictationID) async throws(StoreError) -> HistoryItem {
@@ -157,20 +153,23 @@ public final class GRDBHistoryStore: HistoryStore {
         }
     }
 
-    private func storedRecord(for item: HistoryItem) -> DictationRecord {
-        DictationRecord(item, keepsAudio: !discardsAudio(of: item))
+    private func write(
+        _ item: HistoryItem,
+        _ apply: @escaping @Sendable (Database, DictationRecord) throws -> Void,
+    ) async throws(StoreError) {
+        guard !isDiscarded(item) else {
+            if let url = item.audioURL { try audio.remove(url) }
+            try await delete(id: item.id)
+            return
+        }
+        let record = DictationRecord(item)
+        try await database.write { db in try apply(db, record) }
     }
 
-    private func discardsAudio(of item: HistoryItem) -> Bool {
+    private func isDiscarded(_ item: HistoryItem) -> Bool {
         switch item.status {
         case .inserted, .copied: retention() == .off
         case .canceled, .pending, .recovered, .failed, .refused: false
         }
-    }
-
-    private func finishWrite(of item: HistoryItem) async throws(StoreError) {
-        guard discardsAudio(of: item) else { return }
-        if let url = item.audioURL { try audio.remove(url) }
-        try await delete(id: item.id)
     }
 }

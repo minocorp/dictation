@@ -52,6 +52,17 @@ internal struct HistoryRetentionJobTests {
     }
 
     @Test
+    func unfinishedItemsKeepTheAudioWindowWithRetentionOff() async throws {
+        let (store, job) = try makeJob(retention: .off)
+        let recent = fixtures.item(date: age(days: 0.5), raw: "recent", status: .canceled)
+        let old = fixtures.item(date: age(days: 1.5), raw: "old", status: .failed)
+        try await store.save(recent)
+        try await store.save(old)
+        try await job.runOnce()
+        #expect(try await store.search("", limit: 10).map(\.rawText) == ["recent"])
+    }
+
+    @Test
     func pendingItemsSurviveRetention() async throws {
         let (store, job) = try makeJob(retention: .oneDay)
         let pending = fixtures.item(date: age(days: 40), status: .pending)
