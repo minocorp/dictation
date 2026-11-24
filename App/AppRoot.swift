@@ -65,7 +65,6 @@ internal final class AppRoot {
         await core.runner.launch()
         await core.stores.retention.start()
         LaunchAtLogin.apply(core.preferences.read().launchAtLogin)
-        await LegacyDownloadCleanup.run()
         await models.downloads.refresh()
         models.downloads.ensureDownloaded(core.engines.resolver.selectedEntries())
         #if DEBUG
