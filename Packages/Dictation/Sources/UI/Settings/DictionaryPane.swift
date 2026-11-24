@@ -25,7 +25,7 @@ internal struct DictionaryPane: View {
                     text: $draft.soundsLike,
                     prompt: Text(UIString.dictionarySoundsLikeExample),
                 )
-                Button(UIString.dictionaryAdd) {
+                Button(UIString.commonAdd) {
                     guard let word = draft.word else { return }
                     draft = WordDraft()
                     Task { await model.add(word) }

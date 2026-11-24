@@ -103,40 +103,6 @@
         }
       }
     },
-    "aboutClose": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "완료"
-          }
-        }
-      }
-    },
-    "aboutExportCancel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "취소"
-          }
-        }
-      }
-    },
     "aboutExportDiagnostics": {
       "extractionState": "manual",
       "localizations": {
@@ -256,7 +222,7 @@
         }
       }
     },
-    "dictionaryAdd": {
+    "commonAdd": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -269,6 +235,57 @@
           "stringUnit": {
             "state": "translated",
             "value": "추가"
+          }
+        }
+      }
+    },
+    "commonCancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "취소"
+          }
+        }
+      }
+    },
+    "commonDelete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "삭제"
+          }
+        }
+      }
+    },
+    "commonDone": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "완료"
           }
         }
       }
@@ -341,6 +358,23 @@
         }
       }
     },
+    "dictionarySoundsLikeExample": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "super base"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "슈퍼 베이스"
+          }
+        }
+      }
+    },
     "dictionaryWord": {
       "extractionState": "manual",
       "localizations": {
@@ -354,6 +388,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "단어"
+          }
+        }
+      }
+    },
+    "dictionaryWordExample": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supabase"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supabase"
           }
         }
       }
@@ -388,23 +439,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "기록 모두 지우기…"
-          }
-        }
-      }
-    },
-    "historyClearCancel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "취소"
           }
         }
       }
@@ -460,57 +494,6 @@
         }
       }
     },
-    "historyDelete": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "삭제"
-          }
-        }
-      }
-    },
-    "historyDictionaryAdd": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "추가"
-          }
-        }
-      }
-    },
-    "historyDictionaryCancel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "취소"
-          }
-        }
-      }
-    },
     "historyDictionaryTitle": {
       "extractionState": "manual",
       "localizations": {
@@ -528,6 +511,23 @@
         }
       }
     },
+    "historyEmpty": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No dictations yet"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "받아쓴 내용이 아직 없습니다"
+          }
+        }
+      }
+    },
     "historyHideOriginal": {
       "extractionState": "manual",
       "localizations": {
@@ -541,23 +541,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "원문 숨기기"
-          }
-        }
-      }
-    },
-    "historyInstruction": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Instruction"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "지시"
           }
         }
       }
@@ -868,23 +851,6 @@
         }
       }
     },
-    "hudCancel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "취소"
-          }
-        }
-      }
-    },
     "hudCanceled": {
       "extractionState": "manual",
       "localizations": {
@@ -1004,23 +970,6 @@
         }
       }
     },
-    "hudProblemCouldNotTranscribe": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Couldn't transcribe"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "받아쓰지 못함"
-          }
-        }
-      }
-    },
     "hudProblemCouldNotSave": {
       "extractionState": "manual",
       "localizations": {
@@ -1034,6 +983,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "저장하지 못함"
+          }
+        }
+      }
+    },
+    "hudProblemCouldNotTranscribe": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't transcribe"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "받아쓰지 못함"
           }
         }
       }
@@ -1323,23 +1289,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "변경"
-          }
-        }
-      }
-    },
-    "keyRecordCancel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "취소"
           }
         }
       }
@@ -1718,23 +1667,6 @@
         }
       }
     },
-    "modelsDelete": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "삭제"
-          }
-        }
-      }
-    },
     "modelsDeleteAll": {
       "extractionState": "manual",
       "localizations": {
@@ -1748,23 +1680,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "모든 데이터와 모델 삭제…"
-          }
-        }
-      }
-    },
-    "modelsDeleteAllCancel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "취소"
           }
         }
       }
@@ -1918,6 +1833,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "검증 실패"
+          }
+        }
+      }
+    },
+    "modelsLicenseName %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "License %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "라이선스 %@"
           }
         }
       }
@@ -2109,23 +2041,6 @@
         }
       }
     },
-    "obDone": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "완료"
-          }
-        }
-      }
-    },
     "obKey": {
       "extractionState": "manual",
       "localizations": {
@@ -2279,23 +2194,6 @@
         }
       }
     },
-    "obTryRetry": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retry"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "다시 시도"
-          }
-        }
-      }
-    },
     "obTryReady": {
       "extractionState": "manual",
       "localizations": {
@@ -2309,6 +2207,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "모델 준비됨"
+          }
+        }
+      }
+    },
+    "obTryRetry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다시 시도"
           }
         }
       }
@@ -2568,6 +2483,23 @@
         }
       }
     },
+    "settingsRemoveLanguage %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 제거"
+          }
+        }
+      }
+    },
     "settingsSilence10Minutes": {
       "extractionState": "manual",
       "localizations": {
@@ -2683,91 +2615,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "설정"
-          }
-        }
-      }
-    },
-    "settingsRemoveLanguage %@": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remove %@"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ 제거"
-          }
-        }
-      }
-    },
-    "modelsLicenseName %@": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "License %@"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "라이선스 %@"
-          }
-        }
-      }
-    },
-    "historyEmpty": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No dictations yet"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "받아쓴 내용이 아직 없습니다"
-          }
-        }
-      }
-    },
-    "dictionaryWordExample": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supabase"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supabase"
-          }
-        }
-      }
-    },
-    "dictionarySoundsLikeExample": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "super base"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "슈퍼 베이스"
           }
         }
       }

@@ -15,7 +15,7 @@ internal struct LicensesSheet: View {
             }
             HStack {
                 Spacer()
-                Button(UIString.aboutClose, action: close)
+                Button(UIString.commonDone, action: close)
                     .keyboardShortcut(.defaultAction)
             }
             .padding()

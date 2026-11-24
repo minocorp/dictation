@@ -31,9 +31,9 @@ internal struct AddToDictionarySheet: View {
             TextField(UIString.dictionarySoundsLike, text: $draft.soundsLike)
             HStack {
                 Spacer()
-                Button(UIString.historyDictionaryCancel, action: close)
+                Button(UIString.commonCancel, action: close)
                     .keyboardShortcut(.cancelAction)
-                Button(UIString.historyDictionaryAdd) {
+                Button(UIString.commonAdd) {
                     guard let word = draft.word else { return }
                     Task {
                         await model.add(word)

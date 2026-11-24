@@ -24,6 +24,6 @@ internal struct HUDHandsFreeContent: View {
                 .foregroundStyle(.secondary)
         }
         HUDControlButton(systemImage: "stop.fill", label: UIString.hudStop, action: model.stop)
-        HUDControlButton(systemImage: "xmark", label: UIString.hudCancel, action: model.cancel)
+        HUDControlButton(systemImage: "xmark", label: UIString.commonCancel, action: model.cancel)
     }
 }

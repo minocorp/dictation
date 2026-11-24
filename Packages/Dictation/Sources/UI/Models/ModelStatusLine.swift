@@ -21,7 +21,7 @@ internal struct ModelStatusLine: View {
         switch downloads.state(of: entry) {
         case .ready:
             if entry.isDownloadable {
-                Button(UIString.modelsDelete, role: .destructive) { downloads.delete(entry) }
+                Button(UIString.commonDelete, role: .destructive) { downloads.delete(entry) }
                     .buttonStyle(.borderless)
             }
         case .notDownloaded:

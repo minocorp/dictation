@@ -18,7 +18,7 @@ public struct OnboardingView: View {
             }
             HStack {
                 Spacer()
-                Button(UIString.obDone, action: model.finish)
+                Button(UIString.commonDone, action: model.finish)
                     .keyboardShortcut(.defaultAction)
                     .disabled(!model.canFinish)
             }
