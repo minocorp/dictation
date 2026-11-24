@@ -8,9 +8,9 @@ extension KeyBinding {
     func isShortcutKey(_ event: RawKeyEvent) -> Bool {
         guard
             event.phase == .pressed,
+            event.trigger != .escape,
+            event.trigger != .globe,
             case .key(let code) = event.trigger,
-            code != 53,
-            code != GestureRecognizer.globeCode,
             ModifierKey(rawValue: code) == nil,
             case .key(let dictateCode) = trigger,
             let held = ModifierKey(rawValue: dictateCode)?.modifier

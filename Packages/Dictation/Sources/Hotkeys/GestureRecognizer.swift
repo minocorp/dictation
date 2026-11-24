@@ -1,15 +1,12 @@
 public import Core
 
 public enum GestureRecognizer {
-    static let globeCode: UInt16 = 179
-    static let globeKey = KeyBinding.Trigger.key(code: globeCode)
-
     public static func recognize(
         _ state: inout GestureState,
         _ event: RawKeyEvent,
         at instant: ContinuousClock.Instant,
     ) -> [Gesture] {
-        if event.trigger == globeKey, state.dictateKey.trigger != globeKey { return [] }
+        if event.trigger == .globe, state.dictateKey.trigger != .globe { return [] }
         if state.dictateKey.isShortcutKey(event) {
             return abandonHold(&state) + recognizeShortcutKey(&state, event)
         }

@@ -1,6 +1,8 @@
 public struct KeyBinding: Codable, Hashable, Sendable {
     public enum Trigger: Codable, Hashable, Sendable {
+        public static let globeCode: UInt16 = 179
         public static let escape = Trigger.key(code: 53)
+        public static let globe = Trigger.key(code: globeCode)
 
         case key(code: UInt16)
         case mouseButton(Int)
