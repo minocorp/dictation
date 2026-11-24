@@ -17,7 +17,7 @@ internal actor QwenASRRuntime {
         do {
             model = try await Qwen3ASRModel.fromModelDirectory(directory)
         } catch {
-            throw .modelUnavailable
+            throw Task.isCancelled ? .cancelled : .modelUnavailable
         }
     }
 
