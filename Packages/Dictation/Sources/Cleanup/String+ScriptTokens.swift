@@ -36,7 +36,7 @@ private struct ScriptTokenizer {
     private func classify(at index: Int) -> TokenScript? {
         let scalar = scalars[index]
         if scalar.isHangul { return .hangul }
-        if scalar.isASCIILetter || scalar.isASCIIDigit || Self.wordMarks.contains(scalar) {
+        if scalar.isLatinLetter || scalar.isASCIIDigit || Self.wordMarks.contains(scalar) {
             return .latin
         }
         if scalar == "'" && isBetweenLetters(index) { return .latin }
@@ -44,8 +44,8 @@ private struct ScriptTokenizer {
     }
 
     private func isBetweenLetters(_ index: Int) -> Bool {
-        index > 0 && index + 1 < scalars.count && scalars[index - 1].isASCIILetter
-            && scalars[index + 1].isASCIILetter
+        index > 0 && index + 1 < scalars.count && scalars[index - 1].isLatinLetter
+            && scalars[index + 1].isLatinLetter
     }
 
     private func token(
@@ -59,7 +59,7 @@ private struct ScriptTokenizer {
             while let last = trimmed.last, Self.trailingMarks.contains(last) {
                 trimmed = trimmed.dropLast()
             }
-            guard trimmed.contains(where: { $0.isASCIILetter || $0.isASCIIDigit }) else {
+            guard trimmed.contains(where: { $0.isLatinLetter || $0.isASCIIDigit }) else {
                 return []
             }
         }

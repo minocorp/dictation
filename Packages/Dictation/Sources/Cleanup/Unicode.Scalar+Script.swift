@@ -9,6 +9,10 @@ extension Unicode.Scalar {
         (0x41...0x5A).contains(value) || (0x61...0x7A).contains(value)
     }
 
+    var isLatinLetter: Bool {
+        isASCIILetter || ((0xC0...0x24F).contains(value) && isLetter)
+    }
+
     var isASCIIDigit: Bool {
         (0x30...0x39).contains(value)
     }
