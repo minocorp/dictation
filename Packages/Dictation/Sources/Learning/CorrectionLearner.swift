@@ -4,10 +4,7 @@ import os
 
 public struct CorrectionLearner: Sendable {
     private static let watchLimit: Duration = .seconds(60)
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "Learning",
-    )
+    private static let logger = Logger(dictationCategory: "Learning")
 
     private let words: any WordStore
     private let watcher: any FieldWatching

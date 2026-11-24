@@ -1,7 +1,8 @@
+import Core
 import os
 
 internal enum AppLog {
-    private static let logger = Logger(subsystem: "app.dictation", category: "App")
+    private static let logger = Logger(dictationCategory: "App")
 
     static func failure(_ action: String, _ error: any Error) {
         logger.error(
