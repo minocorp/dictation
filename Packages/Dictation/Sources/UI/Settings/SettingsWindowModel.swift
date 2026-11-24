@@ -22,14 +22,7 @@ public final class SettingsWindowModel {
         self.about = about
     }
 
-    public func show(_ destination: SettingsDestination) {
-        selection =
-            switch destination {
-            case .general: .general
-            case .dictionary: .dictionary
-            case .models: .models
-            case .history: .history
-            case .about: .about
-            }
+    public func show(_ pane: SettingsPane) {
+        selection = pane
     }
 }

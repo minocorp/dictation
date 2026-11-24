@@ -17,7 +17,7 @@ internal enum ShotRenderer {
         try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         await renderHUDStates(to: directory)
         await write(OnboardingView(model: models.onboarding), "onboarding", directory)
-        for pane in [SettingsDestination.general, .models, .about] {
+        for pane in [SettingsPane.general, .models, .about] {
             models.settings.show(pane)
             await write(SettingsView(model: models.settings), "settings-\(pane)", directory)
         }

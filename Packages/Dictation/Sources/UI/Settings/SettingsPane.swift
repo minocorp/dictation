@@ -1,6 +1,6 @@
 import Foundation
 
-internal enum SettingsPane: Hashable, CaseIterable {
+public enum SettingsPane: Hashable, Sendable, CaseIterable {
     case general
     case dictionary
     case models
