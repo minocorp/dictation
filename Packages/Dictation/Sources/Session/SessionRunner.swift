@@ -12,8 +12,6 @@ public final class SessionRunner {
     let environment: SessionEnvironment
 
     @ObservationIgnored
-    var captures: [DictationID: Task<Void, Never>] = [:]
-    @ObservationIgnored
     var tracked: [UUID: TrackedTask] = [:]
     @ObservationIgnored
     var timers: [SessionTimer: ScheduledTimer] = [:]

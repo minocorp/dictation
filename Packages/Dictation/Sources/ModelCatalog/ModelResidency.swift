@@ -50,10 +50,6 @@ public actor ModelResidency {
         }
     }
 
-    public func forget(id: String) {
-        residents.removeValue(forKey: id)?.idleTimer?.cancel()
-    }
-
     private func track(id: String, unload: @escaping @Sendable () async -> Void) {
         residents[id]?.idleTimer?.cancel()
         nextGeneration += 1
