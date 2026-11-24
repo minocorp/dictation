@@ -13,7 +13,7 @@ extension SessionRunner {
 
     func copy(_ text: String) {
         let clipboard = outputs.clipboard
-        spawnSerial(.storage) {
+        spawnSerial(.clipboard) {
             await clipboard.copyTransient(text)
         }
     }
