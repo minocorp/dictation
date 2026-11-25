@@ -11,7 +11,7 @@ internal enum LetterScript: CaseIterable, Hashable, Sendable {
         let value = scalar.value
         if scalar.isHangul {
             self = .hangul
-        } else if scalar.isASCIILetter || (0xC0...0x24F).contains(value) {
+        } else if scalar.isLatinLetter {
             self = .latin
         } else if (0x4E00...0x9FFF).contains(value) || (0x3400...0x4DBF).contains(value) {
             self = .han

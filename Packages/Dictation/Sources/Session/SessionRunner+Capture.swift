@@ -90,7 +90,7 @@ extension SessionRunner {
     }
 
     private func read(_ id: DictationID, segments: AsyncStream<Segment>) {
-        captures[id] = Task { [weak self] in
+        Task { [weak self] in
             for await segment in segments {
                 TimingLog.mark(
                     "segment-emitted",
@@ -99,7 +99,6 @@ extension SessionRunner {
                 )
                 self?.send(.input(id, .segment(segment)))
             }
-            self?.captures[id] = nil
             TimingLog.mark("segments-ended", for: id)
             self?.send(.input(id, .segmentsEnded))
         }

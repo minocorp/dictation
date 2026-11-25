@@ -2,15 +2,11 @@ import Core
 import Foundation
 
 internal enum ModelRecommendation {
-    static func tier(ramGB: Int) -> RAMTier {
-        RAMTier(ramGB: ramGB)
-    }
-
     static func pick(
         from entries: [ModelEntry],
         profile: MachineProfile,
     ) -> (speech: ModelEntry, cleanup: ModelEntry) {
-        let tier = tier(ramGB: profile.ramGB)
+        let tier = RAMTier(ramGB: profile.ramGB)
         let speech = entries.first { $0.stage == .speech && $0.defaultFor.contains(tier) }
         let cleanup = entries.first { $0.stage == .cleanup && $0.defaultFor.contains(tier) }
         return (

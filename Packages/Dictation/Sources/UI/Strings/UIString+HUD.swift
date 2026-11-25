@@ -3,7 +3,6 @@ import Foundation
 extension UIString {
     static let hudListening = resource("hudListening")
     static let hudStop = resource("hudStop")
-    static let hudCancel = resource("hudCancel")
     static let hudEditing = resource("hudEditing")
     static let hudProcessing = resource("hudProcessing")
     static let hudCopied = resource("hudCopied")

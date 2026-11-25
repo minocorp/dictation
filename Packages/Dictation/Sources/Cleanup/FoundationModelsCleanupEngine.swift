@@ -26,7 +26,6 @@ public final class FoundationModelsCleanupEngine: CleanupEngine {
             dictionary: [],
             contextBefore: "",
             languages: [],
-            timeBudget: .seconds(1),
         )
         let prompt = builder.cleanupPrompt(for: warmup, profile: .foundationModels)
         LanguageModelSession(model: model, instructions: prompt.instructionsText).prewarm()
@@ -83,10 +82,10 @@ public final class FoundationModelsCleanupEngine: CleanupEngine {
             throw FoundationModelsErrorMap.cleanupError(from: error)
         }
         let reachedLimit = try await hasReachedLimit(raw, tag: tag, limit: prompt.maximumTokens)
-        guard let parsed = parser.parse(raw, tag: tag, reachedTokenLimit: reachedLimit) else {
+        guard let text = parser.parse(raw, tag: tag, reachedTokenLimit: reachedLimit) else {
             throw .rejected
         }
-        return parsed.text
+        return text
     }
 
     private func hasReachedLimit(

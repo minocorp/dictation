@@ -11,4 +11,5 @@ internal enum ManifestIssue: Hashable, Sendable {
     case missingHash(id: String, path: String)
     case invalidHash(id: String, path: String)
     case downloadBytesMismatch(id: String)
+    case defaultBelowMinimumRAM(id: String)
 }

@@ -38,6 +38,9 @@ extension ModelManifest {
             found.append(.missingRevision(id: entry.id))
         }
         if entry.files.isEmpty { found.append(.emptyFileList(id: entry.id)) }
+        if entry.defaultFor.contains(where: { $0.floorGB < entry.minRAMGB }) {
+            found.append(.defaultBelowMinimumRAM(id: entry.id))
+        }
         if entry.files.reduce(0, { $0 + $1.bytes }) != entry.downloadBytes {
             found.append(.downloadBytesMismatch(id: entry.id))
         }

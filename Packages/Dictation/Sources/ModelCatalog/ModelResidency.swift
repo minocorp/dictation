@@ -50,10 +50,6 @@ public actor ModelResidency {
         }
     }
 
-    public func forget(id: String) {
-        residents.removeValue(forKey: id)?.idleTimer?.cancel()
-    }
-
     private func track(id: String, unload: @escaping @Sendable () async -> Void) {
         residents[id]?.idleTimer?.cancel()
         nextGeneration += 1
@@ -69,11 +65,7 @@ public actor ModelResidency {
         guard ramGB < Self.idleUnloadBelowGB else { return nil }
         let clock = clock
         return Task { [weak self] in
-            do {
-                try await clock.sleep(for: Self.idleLimit)
-            } catch {
-                return
-            }
+            guard await clock.sleepUnlessCancelled(for: Self.idleLimit) else { return }
             await self?.expire(id: id, generation: generation)
         }
     }

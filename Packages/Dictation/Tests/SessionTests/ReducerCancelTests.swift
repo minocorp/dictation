@@ -34,6 +34,19 @@ internal struct ReducerCancelTests {
             isLive: false,
         ),
         ReducerCase(
+            "cancel with sounds off plays nothing",
+            setup: [Script.soundsOff, Script.tapOnly, .timer(.tapThreshold)],
+            event: Fixture.gesture(.cancel),
+            effects: [
+                .cancelWork(Fixture.first),
+                .stopCapture(Fixture.first),
+                .startTimer(.hudExpiry, .seconds(5)),
+                .setTapPolicy(Fixture.policy(swallowsEscape: false)),
+            ],
+            hud: .canceled,
+            isLive: false,
+        ),
+        ReducerCase(
             "cancel with nothing live is ignored",
             event: Fixture.gesture(.cancel),
             effects: [],

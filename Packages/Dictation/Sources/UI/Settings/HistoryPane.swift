@@ -25,7 +25,7 @@ internal struct HistoryPane: View {
                         Button(UIString.historyClearConfirm, role: .destructive) {
                             Task { await model.clearHistory() }
                         }
-                        Button(UIString.historyClearCancel, role: .cancel) {}
+                        Button(UIString.commonCancel, role: .cancel) {}
                     }
             }
         }

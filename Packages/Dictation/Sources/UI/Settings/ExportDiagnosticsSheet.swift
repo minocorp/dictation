@@ -25,7 +25,7 @@ internal struct ExportDiagnosticsSheet: View {
             }
             HStack {
                 Spacer()
-                Button(UIString.aboutExportCancel, action: model.dismissExport)
+                Button(UIString.commonCancel, action: model.dismissExport)
                     .keyboardShortcut(.cancelAction)
                 if case .ready = model.export {
                     Button(UIString.aboutExportSave, action: model.saveExport)

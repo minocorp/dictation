@@ -8,7 +8,6 @@ extension CleanupPipeline {
         let request = EditRequest(
             selection: selection,
             instruction: rules.ruleCleaned(instruction),
-            timeBudget: budget.edit,
         )
         switch try await attempt(
             budget: budget.edit,

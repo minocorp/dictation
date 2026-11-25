@@ -53,4 +53,8 @@ public struct HistoryItem: Hashable, Sendable {
         self.duration = duration
         self.status = status
     }
+
+    public var displayText: String {
+        finalText.isEmpty ? rawText : finalText
+    }
 }

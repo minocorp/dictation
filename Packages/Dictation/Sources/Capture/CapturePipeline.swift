@@ -3,10 +3,7 @@ import Foundation
 import os
 
 internal final class CapturePipeline {
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "Capture",
-    )
+    private static let logger = Logger(dictationCategory: "Capture")
 
     private let writer: CAFWriter
     private let outputs: CaptureOutputs

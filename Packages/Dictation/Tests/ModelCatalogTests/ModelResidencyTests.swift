@@ -102,16 +102,6 @@ internal struct ModelResidencyTests {
     }
 
     @Test
-    func forgottenEngineIsNotUnloadedByTheTimer() async {
-        let residency = makeResidency(ramGB: 8)
-        let engine = FakeSpeechEngine()
-        await residency.didLoad(engine, id: "asr")
-        await residency.forget(id: "asr")
-        await clock.advance(by: .seconds(1_200))
-        #expect(engine.unloadCount == 0)
-    }
-
-    @Test
     func interruptedUnloadKeepsTheEngineTrackedWithAFreshIdleTimer() async {
         let residency = makeResidency(ramGB: 8)
         let engine = FakeSpeechEngine()

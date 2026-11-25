@@ -23,6 +23,7 @@ internal enum ManifestFixtures {
             ModelFile(path: "model.bin", bytes: 10, sha256: String(repeating: "b", count: 64))
         ],
         downloadBytes: Int = 10,
+        minRAMGB: Int = 8,
         defaultFor: [RAMTier] = [],
     ) -> ModelEntry {
         ModelEntry(
@@ -38,7 +39,7 @@ internal enum ManifestFixtures {
             license: license,
             licenseVerified: true,
             languages: ["multilingual", "ko", "en"],
-            minRAMGB: 8,
+            minRAMGB: minRAMGB,
             downloadBytes: downloadBytes,
             files: files,
             defaultFor: defaultFor,

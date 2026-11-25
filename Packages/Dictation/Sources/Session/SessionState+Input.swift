@@ -6,7 +6,7 @@ extension SessionState {
         case .started:
             guard active?.pending.id == id else { return [] }
             active?.isCaptureOpen = true
-            return [.play(.start)]
+            return sound(.start)
         case .focus(let snapshot):
             modify(id) {
                 $0.target = snapshot

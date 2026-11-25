@@ -6,10 +6,7 @@ import os
 internal final class SpeechFormatConverter {
     private static let mixedChannelCount = 2
     private static let tailPadding = 64
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "Capture",
-    )
+    private static let logger = Logger(dictationCategory: "Capture")
 
     private let channelCount: Int
     private let sourceRate: Double

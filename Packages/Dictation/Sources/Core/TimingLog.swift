@@ -9,10 +9,7 @@ public enum TimingLog {
         var keyUp: ContinuousClock.Instant?
     }
 
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "timing",
-    )
+    private static let logger = Logger(dictationCategory: "timing")
     private static let clock = ContinuousClock()
     private static let clockworks = Mutex<[DictationID: Clockwork]>([:])
 

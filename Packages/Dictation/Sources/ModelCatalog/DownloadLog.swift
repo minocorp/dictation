@@ -3,10 +3,7 @@ import Foundation
 import os
 
 internal enum DownloadLog {
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "models",
-    )
+    private static let logger = Logger(dictationCategory: "models")
 
     static func started(_ entry: ModelEntry, remainingBytes: Int, constrainedAllowed: Bool) {
         logger.info(

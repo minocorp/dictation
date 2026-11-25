@@ -1,3 +1,5 @@
+import Core
+
 internal struct TapHealthCheck: Sendable {
     let probe: any TapProbe
     let clock: any Clock<Duration>
@@ -11,11 +13,7 @@ internal struct TapHealthCheck: Sendable {
                 last = current
                 continuation.yield(current)
             }
-            do {
-                try await clock.sleep(for: interval)
-            } catch {
-                return
-            }
+            guard await clock.sleepUnlessCancelled(for: interval) else { return }
         }
     }
 }

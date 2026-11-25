@@ -6,12 +6,4 @@ internal struct TransferFailure: Sendable {
     let isCancelled: Bool
     let isOutOfSpace: Bool
     let resumeData: Data?
-
-    static let cancelled = TransferFailure(
-        code: NSURLErrorCancelled,
-        isConstrained: false,
-        isCancelled: true,
-        isOutOfSpace: false,
-        resumeData: nil,
-    )
 }

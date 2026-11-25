@@ -25,7 +25,7 @@ internal struct SettingsModelTests {
             ),
             environment: SettingsEnvironment(
                 apply: { applied.values.append($0) },
-                microphones: { [MicrophoneOption(device: .builtIn, name: "Built-in")] },
+                microphones: { [MicrophoneOption.builtIn] },
                 languages: { languages },
                 captureKeys: { AsyncStream { $0.finish() } },
                 globeAdvice: { advice },

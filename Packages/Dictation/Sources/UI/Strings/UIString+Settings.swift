@@ -27,7 +27,6 @@ extension UIString {
     static let keyRecord = resource("keyRecord")
     static let keyRecording = resource("keyRecording")
     static let keyRecordingShortcut = resource("keyRecordingShortcut")
-    static let keyRecordCancel = resource("keyRecordCancel")
     static let keyReset = resource("keyReset")
     static let keyLeft = resource("keyLeft")
     static let keyRight = resource("keyRight")
@@ -42,7 +41,6 @@ extension UIString {
     static let dictionarySoundsLike = resource("dictionarySoundsLike")
     static let dictionaryWordExample = resource("dictionaryWordExample")
     static let dictionarySoundsLikeExample = resource("dictionarySoundsLikeExample")
-    static let dictionaryAdd = resource("dictionaryAdd")
     static let dictionaryRemove = resource("dictionaryRemove")
     static let dictionaryLearned = resource("dictionaryLearned")
     static let dictionaryLearning = resource("dictionaryLearning")
@@ -52,7 +50,5 @@ extension UIString {
     static let aboutExportTitle = resource("aboutExportTitle")
     static let aboutExportFiles = resource("aboutExportFiles")
     static let aboutExportSave = resource("aboutExportSave")
-    static let aboutExportCancel = resource("aboutExportCancel")
     static let aboutExportFailed = resource("aboutExportFailed")
-    static let aboutClose = resource("aboutClose")
 }

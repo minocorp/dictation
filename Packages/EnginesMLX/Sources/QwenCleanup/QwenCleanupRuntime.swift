@@ -26,7 +26,7 @@ internal actor QwenCleanupRuntime {
                 using: makeHuggingFaceTokenizerLoader(),
             )
         } catch {
-            throw .modelUnavailable
+            throw Task.isCancelled ? .cancelled : .modelUnavailable
         }
     }
 

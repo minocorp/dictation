@@ -575,7 +575,7 @@
         "ko",
         "en"
       ],
-      "min_ram_gb": 24,
+      "min_ram_gb": 16,
       "download_bytes": 3061132920,
       "files": [
         {

@@ -37,7 +37,7 @@ internal struct GeneralPane: View {
             Section {
                 Picker(UIString.settingsMicrophone, selection: $model.preferences.microphone) {
                     ForEach(model.microphones) { option in
-                        Text(verbatim: option.name).tag(option.device)
+                        microphoneLabel(option).tag(option.device)
                     }
                 }
                 LanguagesRow(model: model)
@@ -47,5 +47,13 @@ internal struct GeneralPane: View {
             }
         }
         .formStyle(.grouped)
+    }
+
+    private func microphoneLabel(_ option: MicrophoneOption) -> Text {
+        if let name = option.deviceName {
+            Text(verbatim: name)
+        } else {
+            Text(UIString.settingsMicrophoneBuiltIn)
+        }
     }
 }

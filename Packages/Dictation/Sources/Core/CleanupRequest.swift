@@ -5,7 +5,6 @@ public struct CleanupRequest: Hashable, Sendable {
     public let dictionary: [Word]
     public let contextBefore: String
     public let languages: [Locale]
-    public let timeBudget: Duration
     public let isFinalSegment: Bool
 
     public init(
@@ -13,14 +12,12 @@ public struct CleanupRequest: Hashable, Sendable {
         dictionary: [Word],
         contextBefore: String,
         languages: [Locale],
-        timeBudget: Duration,
         isFinalSegment: Bool = true,
     ) {
         self.text = text
         self.dictionary = dictionary
         self.contextBefore = contextBefore
         self.languages = languages
-        self.timeBudget = timeBudget
         self.isFinalSegment = isFinalSegment
     }
 }

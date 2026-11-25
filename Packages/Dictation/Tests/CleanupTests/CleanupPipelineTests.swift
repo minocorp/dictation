@@ -92,7 +92,6 @@ internal struct CleanupPipelineTests {
         #expect(request.dictionary == words)
         #expect(request.contextBefore == "앞 문장")
         #expect(request.languages == preferences().languages)
-        #expect(request.timeBudget == .milliseconds(900))
     }
 
     @Test
@@ -195,18 +194,5 @@ internal struct CleanupPipelineTests {
             Issue.record("expected guard fallback, got \(result.source)")
             return
         }
-    }
-
-    @Test
-    func requestCarriesTheInjectedBudget() async throws {
-        engine.cleanResult = .success(Self.koreanCleaned)
-        let budget = CleanupBudget(segment: .seconds(2), edit: .seconds(9))
-        _ = try await pipeline(engine: engine, budget: budget)
-            .clean(
-                Self.korean,
-                context: context(),
-                preferences: preferences(),
-            )
-        #expect(engine.cleanRequests.first?.timeBudget == .seconds(2))
     }
 }

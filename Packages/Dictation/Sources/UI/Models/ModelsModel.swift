@@ -56,11 +56,7 @@ public final class ModelsModel {
         case .speech: settings.preferences.speechModel = .model(id: entry.id)
         case .cleanup: settings.preferences.cleanupModel = .model(id: entry.id)
         }
-        guard entry.isDownloadable else { return }
-        switch downloads.state(of: entry) {
-        case .notDownloaded, .failed: downloads.download(entry)
-        case .waitingForApproval, .downloading, .ready: break
-        }
+        downloads.ensureDownloaded([entry])
     }
 
     func deleteEverything() async {

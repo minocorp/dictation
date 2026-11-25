@@ -79,7 +79,7 @@ internal struct ModelRecommendationTests {
         (0, RAMTier.ram8), (15, .ram8), (16, .ram16), (23, .ram16), (24, .ram24), (128, .ram24),
     ])
     func tierBoundaries(ramGB: Int, tier: RAMTier) {
-        #expect(ModelRecommendation.tier(ramGB: ramGB) == tier)
+        #expect(RAMTier(ramGB: ramGB) == tier)
     }
 
     @Test

@@ -19,7 +19,7 @@ internal struct HistoryActionBar: View {
             }
             .disabled(!model.canRetry(item))
             Button(UIString.historyAddToDictionary) { model.dictionaryCandidate = item }
-            Button(UIString.historyDelete, role: .destructive) {
+            Button(UIString.commonDelete, role: .destructive) {
                 Task { await model.delete(item) }
             }
         }

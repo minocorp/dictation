@@ -25,9 +25,7 @@ extension UIString {
     static let modelsDownload = resource("modelsDownload")
     static let modelsCancelDownload = resource("modelsCancelDownload")
     static let modelsAllowConstrained = resource("modelsAllowConstrained")
-    static let modelsDelete = resource("modelsDelete")
     static let modelsDeleteAll = resource("modelsDeleteAll")
     static let modelsDeleteAllTitle = resource("modelsDeleteAllTitle")
     static let modelsDeleteAllConfirm = resource("modelsDeleteAllConfirm")
-    static let modelsDeleteAllCancel = resource("modelsDeleteAllCancel")
 }

@@ -7,6 +7,11 @@ internal enum Script {
     static let processingDelay = Duration.milliseconds(250)
     static let startCapture = Effect.startCapture(Fixture.first, device: .builtIn)
     static let tapOnly = Fixture.gesture(.pressBegan)
+    static let soundsOff: Event = {
+        var preferences = Fixture.preferences
+        preferences.sounds = false
+        return .system(.preferences(preferences))
+    }()
     static let afterTap = [tapOnly, Fixture.gesture(.released)]
     static let handsFree = afterTap + [Fixture.gesture(.handsFreeBegan)]
     static let live = Fixture.holdAndRelease()

@@ -21,7 +21,7 @@ internal struct ModelsPane: View {
                         Button(UIString.modelsDeleteAllConfirm, role: .destructive) {
                             Task { await model.deleteEverything() }
                         }
-                        Button(UIString.modelsDeleteAllCancel, role: .cancel) {}
+                        Button(UIString.commonCancel, role: .cancel) {}
                     }
             }
         }

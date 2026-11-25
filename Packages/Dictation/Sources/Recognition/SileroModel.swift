@@ -1,12 +1,10 @@
+import Core
 import FluidAudio
 import Foundation
 import os
 
 internal actor SileroModel {
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "Speech",
-    )
+    private static let logger = Logger(dictationCategory: "Speech")
 
     private let modelDirectory: URL?
     private var manager: VadManager?

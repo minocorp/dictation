@@ -69,13 +69,13 @@ public final class QwenCleanupEngine: CleanupEngine {
         let generated = try await UserInitiated.run { [self] () async throws(CleanupError) in
             try await generate(prompt, tag: tag)
         }
-        let parsed = parser.parse(
+        let text = parser.parse(
             generated.text,
             tag: tag,
             reachedTokenLimit: generated.reachedTokenLimit,
         )
-        guard let parsed else { throw .rejected }
-        return parsed.text
+        guard let text else { throw .rejected }
+        return text
     }
 
     private func generate(

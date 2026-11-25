@@ -75,6 +75,14 @@ internal struct ReducerPressTests {
             isLive: true,
         ),
         ReducerCase(
+            "capture started is silent with sounds off",
+            setup: [Script.soundsOff, Script.tapOnly],
+            event: Fixture.input(.started),
+            effects: [],
+            hud: .listening,
+            isLive: true,
+        ),
+        ReducerCase(
             "capture failure at start shows microphone unavailable",
             setup: [Script.tapOnly],
             event: Fixture.result(.failed(.capture(.deviceUnavailable))),

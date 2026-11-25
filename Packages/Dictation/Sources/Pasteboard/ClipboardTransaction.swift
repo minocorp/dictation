@@ -1,3 +1,4 @@
+import Core
 import Foundation
 
 public actor ClipboardTransaction {
@@ -100,11 +101,7 @@ public actor ClipboardTransaction {
     private func scheduleRestore(_ ownership: Ownership) {
         pending = ownership
         restoreTask = Task {
-            do {
-                try await clock.sleep(for: Self.restoreDelay)
-            } catch {
-                return
-            }
+            guard await clock.sleepUnlessCancelled(for: Self.restoreDelay) else { return }
             restoreIfOurs(ownership)
         }
     }
@@ -127,11 +124,7 @@ public actor ClipboardTransaction {
     private func waitForChange(since startCount: Int) async -> Bool {
         for _ in 0..<Self.copyPollAttempts {
             if pasteboard.changeCount != startCount { return true }
-            do {
-                try await clock.sleep(for: Self.copyPollInterval)
-            } catch {
-                return false
-            }
+            guard await clock.sleepUnlessCancelled(for: Self.copyPollInterval) else { return false }
         }
         return pasteboard.changeCount != startCount
     }

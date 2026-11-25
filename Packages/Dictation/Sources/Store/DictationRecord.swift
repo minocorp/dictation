@@ -17,7 +17,7 @@ internal struct DictationRecord: Codable, FetchableRecord, PersistableRecord, Se
     var durationMs: Int
     var status: String
 
-    init(_ item: HistoryItem, keepsAudio: Bool) {
+    init(_ item: HistoryItem) {
         id = item.id.stem
         createdAt = item.date
         appBundleID = item.appBundleID
@@ -26,7 +26,7 @@ internal struct DictationRecord: Codable, FetchableRecord, PersistableRecord, Se
         rawText = item.rawText
         finalText = item.finalText
         instruction = item.instruction
-        audioPath = keepsAudio ? item.audioURL?.lastPathComponent : nil
+        audioPath = item.audioURL?.lastPathComponent
         durationMs = Int((item.duration / .milliseconds(1)).rounded())
         status = item.status.rawValue
     }

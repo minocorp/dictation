@@ -1,11 +1,9 @@
+import Core
 import Foundation
 import os
 
 internal enum StoreLog {
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "Store",
-    )
+    private static let logger = Logger(dictationCategory: "Store")
 
     static func failure(_ action: String, _ error: any Error) {
         logger.error(

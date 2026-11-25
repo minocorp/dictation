@@ -4,10 +4,7 @@ import os
 
 public struct CorrectionLearner: Sendable {
     private static let watchLimit: Duration = .seconds(60)
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "",
-        category: "Learning",
-    )
+    private static let logger = Logger(dictationCategory: "Learning")
 
     private let words: any WordStore
     private let watcher: any FieldWatching
@@ -59,12 +56,8 @@ public struct CorrectionLearner: Sendable {
         }
         let clock = clock
         let timer = Task {
-            do {
-                try await clock.sleep(for: Self.watchLimit)
-                continuation.yield(.timedOut)
-            } catch {
-                return
-            }
+            guard await clock.sleepUnlessCancelled(for: Self.watchLimit) else { return }
+            continuation.yield(.timedOut)
         }
         var latest = baseline
         for await event in merged {

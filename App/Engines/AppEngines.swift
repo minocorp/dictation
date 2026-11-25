@@ -3,7 +3,6 @@ import Foundation
 import ModelCatalog
 
 internal struct AppEngines: Sendable {
-    let gate: InferenceGate
     let library: ManifestModelLibrary
     let residency: ModelResidency
     let resolver: EngineResolver
@@ -33,7 +32,7 @@ internal struct AppEngines: Sendable {
             gate: gate,
             preferences: preferences,
         )
-        return AppEngines(gate: gate, library: library, residency: residency, resolver: resolver)
+        return AppEngines(library: library, residency: residency, resolver: resolver)
     }
 
     private static func loadManifest() -> ModelManifest {

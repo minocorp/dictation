@@ -7,7 +7,7 @@ internal struct OutputParserTests {
         let raw: String
         let tag: OutputTag
         let reachedLimit: Bool
-        let expected: ParsedOutput?
+        let expected: String?
     }
 
     private let parser = OutputParser()
@@ -18,49 +18,49 @@ internal struct OutputParserTests {
             raw: "Hello world.</cleaned>",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "Hello world.", hasClosingTag: true),
+            expected: "Hello world.",
         ),
         Case(
             name: "full block",
             raw: "<cleaned>Hello world.</cleaned>",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "Hello world.", hasClosingTag: true),
+            expected: "Hello world.",
         ),
         Case(
             name: "text after the closing tag is ignored",
             raw: "<cleaned>One.</cleaned> Sure, anything else?",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "One.", hasClosingTag: true),
+            expected: "One.",
         ),
         Case(
             name: "echoed opening tags",
             raw: "<cleaned><cleaned>One.</cleaned>",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "One.", hasClosingTag: true),
+            expected: "One.",
         ),
         Case(
             name: "missing closing tag uses whole output",
             raw: "<cleaned>One. Two.",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "One. Two.", hasClosingTag: false),
+            expected: "One. Two.",
         ),
         Case(
             name: "no tag at all",
             raw: "  One. Two.\n",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "One. Two.", hasClosingTag: false),
+            expected: "One. Two.",
         ),
         Case(
             name: "empty block is valid",
             raw: "<cleaned></cleaned>",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "", hasClosingTag: true),
+            expected: "",
         ),
         Case(name: "nothing", raw: "  \n", tag: .cleaned, reachedLimit: false, expected: nil),
         Case(
@@ -82,21 +82,21 @@ internal struct OutputParserTests {
             raw: "One.</cleaned>",
             tag: .cleaned,
             reachedLimit: true,
-            expected: ParsedOutput(text: "One.", hasClosingTag: true),
+            expected: "One.",
         ),
         Case(
             name: "edit tag",
             raw: "Short.</edited>",
             tag: .edited,
             reachedLimit: false,
-            expected: ParsedOutput(text: "Short.", hasClosingTag: true),
+            expected: "Short.",
         ),
         Case(
             name: "keeps newlines inside",
             raw: "A\n\nB</cleaned>",
             tag: .cleaned,
             reachedLimit: false,
-            expected: ParsedOutput(text: "A\n\nB", hasClosingTag: true),
+            expected: "A\n\nB",
         ),
     ]
 

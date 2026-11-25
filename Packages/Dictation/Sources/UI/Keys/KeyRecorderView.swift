@@ -14,7 +14,7 @@ public struct KeyRecorderView: View {
                     .foregroundStyle(.secondary)
                     .focusable()
                     .onKeyPress { _ in .handled }
-                Button(UIString.keyRecordCancel, action: model.cancel)
+                Button(UIString.commonCancel, action: model.cancel)
             } else {
                 KeycapLabel(text: model.currentLabel)
                 Button(UIString.keyRecord, action: model.begin)

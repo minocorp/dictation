@@ -23,7 +23,7 @@ internal final class AppWindows {
         if let closeObserver { NotificationCenter.default.removeObserver(closeObserver) }
     }
 
-    func showSettings(_ destination: SettingsDestination) {
+    func showSettings(_ destination: SettingsPane) {
         models.settings.show(destination)
         let window =
             settings

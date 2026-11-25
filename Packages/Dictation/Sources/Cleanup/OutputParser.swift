@@ -7,7 +7,7 @@ public struct OutputParser: Sendable {
         _ raw: String,
         tag: OutputTag,
         reachedTokenLimit: Bool = false,
-    ) -> ParsedOutput? {
+    ) -> String? {
         var body = Substring(raw)
         if let opening = body.range(of: tag.opening) {
             body = body[opening.upperBound...]
@@ -18,11 +18,11 @@ public struct OutputParser: Sendable {
             body = trimmed.dropFirst(tag.opening.count)
         }
         if let closing = body.range(of: tag.closing) {
-            return ParsedOutput(text: trimmed(body[..<closing.lowerBound]), hasClosingTag: true)
+            return trimmed(body[..<closing.lowerBound])
         }
         let text = trimmed(body)
         guard !reachedTokenLimit, !text.isEmpty else { return nil }
-        return ParsedOutput(text: text, hasClosingTag: false)
+        return text
     }
 
     private func trimmed(_ text: Substring) -> String {

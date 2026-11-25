@@ -14,6 +14,8 @@ internal struct ScriptTokenTests {
         Case(input: "let's go", expected: ["let's", "go"]),
         Case(input: "- - ...", expected: []),
         Case(input: "35000 원", expected: ["35000", "원"]),
+        Case(input: "café에서", expected: ["café", "에서"]),
+        Case(input: "naïve 3×4", expected: ["naïve", "3", "4"]),
     ]
 
     @Test(arguments: table)

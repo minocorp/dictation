@@ -17,5 +17,4 @@ extension UIString {
     static let obTryAllowDownload = resource("obTryAllowDownload")
     static let obTryRetry = resource("obTryRetry")
     static let obTryReady = resource("obTryReady")
-    static let obDone = resource("obDone")
 }
