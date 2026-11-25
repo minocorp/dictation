@@ -16,7 +16,7 @@ xcodebuild build \
     -skipPackagePluginValidation \
     -quiet
 
-osascript -e 'tell application id "com.minodevss.dictation" to quit' >/dev/null 2>&1 || true
+osascript -e 'tell application id "com.minocorp.dictation" to quit' >/dev/null 2>&1 || true
 while pgrep -f "$installed/Contents/MacOS/Dictation" >/dev/null; do sleep 0.2; done
 
 mkdir -p "$HOME/Applications"
